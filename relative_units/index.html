@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="relative_units.css">
+    <title>Relative units</title>
+</head>
+<body>
+    <section class="container">
+        <article class="explanation-box">
+            <p class="explanation">Each element has common class and unique class. Common class contains sizes in relatives. Unique classes contain sizes in absolute units</p>
+        </article>
+        <span class="box box-samll">Samll</span>
+        <span class="box box-large">Large</span>
+    </section>
+    <section class="text-box">
+        <article class="explanation-box">
+            <p class="explanation">The slogan in section has font-size specified in absolute units while slogan in paragraph has font-size in relative units</p>
+        </article>
+        We love coffee
+        <p class="slogan">We love coffee</p>
+    </section>
+    <section class="shrinked-text-box">
+            <article class="explanation-box">
+                <p class="explanation">The illustration of "the shrinking text" problem</p>
+            </article>
+        <ul>
+            <li>
+                Top level
+                <ul>
+                    <li>
+                        SecondLevel
+                        <ul>
+                            <li>
+                                Third Level
+                                <ul>
+                                    <li>
+                                        Fourth Level
+                                        <ul>
+                                            <li>Fifth Level</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section class="text-box">
+        <article class="explanation-box">
+            <p class="explanation">Using redefined root font-size rem, em and px in one place</p>
+        </article>
+        <section class="panel">
+            <h2>Single-origin</h2>
+            <p>We have built partnerships with small farms around the world to hand-select beans at the peak of season. We then carefully roast in <a href="/batch-size">small batches</a> to maximize their potential.</p>
+        </section>
+    </section>
+    <section class="text-box">
+        <article class="explanation-box">
+            <p class="explanation">Resizing a single component</p>
+        </article>
+        <section class="panel-single">
+            <h2>Single-origin</h2>
+            <p>We have built partnerships with small farms around the world to hand-select beans at the peak of season. We then carefully roast in <a href="/batch-size">small batches</a> to maximize their potential.</p>
+        </section>
+        <section class="panel-single large">
+            <h2>Single-origin</h2>
+            <p>We have built partnerships with small farms around the world to hand-select beans at the peak of season. We then carefully roast in <a href="/batch-size">small batches</a> to maximize their potential.</p>
+        </section>
+    </section>
+    <section class="container">
+        <article class="explanation-box">
+            <p class="explanation">Viewport-relative units. Using vmin for shwing a square regardles of size or orientation of the screen</p>
+        </article>
+        <div class="square"></div>
+    </section>
+    <section class="container">
+        <article class="explanation-box">
+            <p class="explanation">Line-height inheriting demonstration: plain, unitles+unit and unit+unit</p>
+        </article>
+        <article>
+            <p>We have built partnerships with small farms around the world to hand-select beans at the peak of season. We then carefully roast in small batches to maximize their potential.</p>
+        </article>
+        <article class="height-of-line">
+            <p class="about-us">We have built partnerships with small farms around the world to hand-select beans at the peak of season. We then carefully roast in small batches to maximize their potential.</p>
+        </article>
+        <article class="height-of-line unit">
+            <p class="about-us">We have built partnerships with small farms around the world to hand-select beans at the peak of season. We then carefully roast in small batches to maximize their potential.</p>
+        </article>
+    </section>
+    <section class="container">
+        <article class="explanation-box">
+            <p class="explanation">CSS variables in action</p>
+        </article>
+        <article class="variables">
+            <p>We have built partnerships with small farms around the world to hand-select beans at the peak of season. We then carefully roast in small batches to maximize their potential.</p>
+        </article>
+    </section>
+    <section class="container">
+        <article class="explanation-box">
+            <p class="explanation">CSS variables: dynamic changing</p>
+        </article>
+        <div class="container-var">
+            <section class="panel-var">
+                <h2>Single-origin</h2>
+                <p class="body-var">We have built partnerships with small farms around the world to hand-select beans at the peak of season. We then carefully roast in small batches to maximize their potential.</p>
+            </section>
+            <aside class="dark-var">
+                <section class="panel-var">
+                    <h2>Single-origin</h2>
+                    <p class="body-var">We have built partnerships with small farms around the world to hand-select beans at the peak of season. We then carefully roast in small batches to maximize their potential.</p>
+                </section>
+            </aside>
+        </div>
+    </section>
+    <script src="./cssVariables.js"></script>
+</body>
+</html>

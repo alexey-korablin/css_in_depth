@@ -1,0 +1,225 @@
+.explanation-box {
+    margin-bottom: 30px;
+}
+
+.explanation {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 36px;
+    border-left: 8px solid #eee;
+    border-bottom: 1px solid #eee;
+    font-size: 1.6rem;
+}
+
+.container {
+    margin: 4em auto;
+}
+
+/* 
+Relative units like em or rem depends of font-size.
+By default 1em is equal to 16px
+The depending em from font-size illustrated beneath
+*/
+.box {
+    padding: 1em;
+    border-radius: 1em;
+    background-color: lightgray;
+}
+
+.box-large {
+    font-size: 18px;
+}
+
+.box-small {
+    font-size: 12px;
+}
+
+/* 
+The depending font-size specified in ems from font-size of parrent
+    element
+*/
+.text-box {
+    font-size: 16px;
+}
+.slogan {
+    font-size: 1.2em;           /* font-size here is 19.2px */
+    padding: 1.2em;             /* padding here is 23.04px because it depends on font-size current class or class of parent element*/
+    background-color: #ccc;
+}
+
+/* 
+Calculation desiret size in em:
+    Base size is 12px
+    Desired size is 10px
+    Calculation: 10/12 = 0.8333em
+*/
+
+/* 
+Problem: Shrinking the text
+*/
+.shrinked-text-box {
+    font-size: 16px;
+}
+ul {
+    font-size: .8em;
+}
+/* 
+Solve the shrinking problem can using rem instead of em
+rem referrs to root element that is :root pseudoselector or html. They are the same
+*/
+
+/* 
+ADVICE TO USING MEASURE UNITS
+rem - font-size
+px - borders
+em - most other properties
+*/
+
+/* 
+Using redefined root font-size rem, em and px in one place
+*/
+:root {
+    font-size: 16px; /*Can be any f.e. 0.75em*/
+}
+.panel {
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 1px solid #999;
+}
+.panel>h2 {
+    margin-top: 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* 
+Using relative units in media queries
+This code can resize all elements on a page if used relative measure units.
+If used pixels it doesn't affect
+*/
+/* :root {
+    font-size: .75em;
+}
+@media (min-width: 800px) {
+    :root {
+        font-size: 0.875em
+    }
+}
+@media (min-width: 1200px) {
+    :root {
+        font-size: 1em;
+    }
+} */
+
+/*
+Resizing a single component
+*/
+.panel-single {
+    font-size: 1rem;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 1px solid #999;
+}
+.panel-single>h2 {
+    margin-top: 0;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.panel-single.large {
+    font-size: 1.2em;
+}
+
+/* 
+Viewport-relative units
+viewport—The framed area in the browser window where the web page is visible.
+This excludes the browser’s address bar, toolbars, and status bar, if present.
+vh - 1/100th of the viewport height
+wh - 1/100th of the viewport width
+vmin - 1/100th of the smaller dimension, height or width
+vmax - 1/100th of the larger dimension, height or width
+F.e. an element with a height and width of 90 vmin will always display as a square a little
+smaller than the viewport, regardless of its size or orientation.
+*/
+.square {
+    width: 90vmin;
+    height: 90vmin;
+    background-color: #369;
+}
+/* 
+vw could be used for scaling font-size on a page, but there is at least one serious concern:
+if font-size is 2vw then on a screen at 1200px size will be 24px, worse, on iPhone6 size will 
+be 7.5px.
+calc()
+The function supports: + - * /
+*/
+:root {
+    font-size: calc(0.5em + 1vw)
+}
+/* 
+This can be used as alternative for media-queries
+*/
+
+/* 
+Unitless numbers and line-height
+The properties like: line-height, z-index, font-weight
+Unitless 0 can only be used for length and percentage (padding, margin, borders and width)
+It can't be used with degrees or time-based values like seconds
+line-height can accept as unitles as unit values/ The difference in inheriting
+*/
+.height-of-line {
+    line-height: 1.2;
+}
+.height-of-line.unit {
+    line-height: 1.2em;
+}
+.about-us {
+    font-size: 2em;
+}
+/* 
+When line-height is unitless and font-size is unit the calculation is:
+let root's font-size is 16px then element's font-size is 16 * 2 = 32,
+line-height is 32 * 1.2 = 38.4
+In case when using units both for line-height and font-size, the corresponded 
+values applying literally
+*/
+
+/* 
+CSS variables
+If calculating var() is failure the property will be set to its initial value
+*/
+.variables {
+    --main-font: Helvetica, Arial, sans-serif;
+    --brand-color: #369;
+}
+.variables>p {
+    font-family: var(--main-font, sans-serif);
+    color: var(--brand-color, blue);
+}
+
+.container-var {
+    --main-bg: #fff;
+    --main-clr: #000;
+}
+.panel-var {
+    font-size: 1rem;
+    padding: 1em;
+    border: 1px solid #999;
+    border-radius: 0.5em;
+    background-color: var(--main-bg);
+    color: var(--main-clr);
+}
+.panel-var>h2 {
+    margin-top: 0;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.dark-var {
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #999;
+    --main-bg: #333;
+    --main-clr: #fff;
+}
