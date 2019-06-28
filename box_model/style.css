@@ -1,0 +1,155 @@
+/* установка бокс-модели для всех элементов (*) включая псевдоэлементы ::before
+и ::after 
+в случае использование сторонних стилей это может не работать в этом случае 
+box-sizing: border-box применяется к рут-элементу: :root, а все остальные должны 
+наследовать это свойство*/
+
+:root {
+    box-sizing: border-box;
+}
+
+/* чтобы не сломать сторонние стили следует восстановить значение box-sizing
+для них*/
+
+.third-party-component {
+    box-sizing: content-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #eee;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+    color: #fff;
+    background-color: #0072b0;
+    border-radius: 0.5em;
+}
+
+main {
+    display: block;
+}
+
+/* свойство box-sizing по умолчанию равно content-box. Это значит, что 
+значение ширины будет применено только к контенту.
+Свойство border-box считает значение ширины с учетом границ рамок и отступов */
+
+.main {
+    float: left;
+    width: 70%;
+    background-color: #fff;
+    border-radius: 0.5em;
+}
+
+.variables {
+    --gutter: 1.5em;
+}
+
+.sidebar {
+    float: right;
+    width: calc(30% - var(--gutter));
+    margin-left: var(--gutter);
+    padding: 1.5em;
+    background-color: #fff;
+}
+
+/* Контроль выпадения контента за пределы блока 
+свойство: overflow
+значения: visible (default) - контент виден всегда
+          hidden - контент не помещающийся в блок не виден
+          scroll - непоместившийся контент можно проскроллить, скролл-бары
+                   видны всегда
+          auto - скроллбары появляются только когда контент не помещается
+                 в блок 
+Также можно указать поведение для выпадающего контента по конкретным осям:
+overflow-x и overflow-y - этим свойствам доступны те же значения
+!!! Если дать разные значения для двух осей, результат может быть не предсказуемым*/
+
+.overflowing {
+    clear: both;
+    padding-top: 1em;
+}
+
+.overflowing div {
+    display: inline-block;
+    width: calc(100% / 4 - var(--gutter));
+    height: 3em;
+    padding-left: var(--gutter);
+}
+
+.overflowing .visible {
+    overflow: visible;
+}
+
+.overflowing .hidden {
+    overflow: hidden;
+}
+
+.overflowing .scroll {
+    overflow: scroll;
+}
+
+.overflowing .auto {
+    overflow: auto;
+}
+
+/* display: table; отображает контент как в таблице. 
+margin - не работает. Отступы можно сделать свойством border-spacing 
+на элементе со свойством display: table; при этом отступы добавятся со
+всех сторон. Это может нарушить верстку. Исправить этот побочный эффект 
+можно с помощью дополнительного элемента-обертки с отрицательными отступами
+с нужных сторон. wrapper оборачивает container-table*/
+
+.container-table {
+    display: table;
+    width: 100%;
+    border-spacing: var(--gutter);
+}
+
+.wrapper {
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+}
+
+.main-table {
+    display: table-cell;
+    width: 70%;
+    background-color: #fff;
+    border-radius: 0.5em;
+}
+
+.sidebar-table {
+    display: table-cell;
+    width: 30%;
+    /* margin-left: var(--gutter);  doesn't work anymore*/
+    padding: 1.5em;
+    background-color: #fff;
+}
+
+/* Flex */
+
+.container-flex {
+    display: flex;
+    /* width: 100%; */
+}
+
+.main-flex {
+    display: table-cell;
+    width: 70%;
+    background-color: #fff;
+    border-radius: 0.5em;
+}
+
+.sidebar-flex {
+    display: table-cell;
+    width: 30%;
+    /* margin-left: var(--gutter);  doesn't work anymore*/
+    padding: 1.5em;
+    background-color: #fff;
+}
