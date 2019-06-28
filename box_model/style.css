@@ -153,3 +153,23 @@ margin - не работает. Отступы можно сделать сво�
     padding: 1.5em;
     background-color: #fff;
 }
+
+/* Vertical align tips
+* Can you use a natural height container? Apply an equal top and bottom padding
+to the container to center its contents.
+* Do you need a specific height container, or do you need to avoid using padding?
+Use display: table-cell and vertical-align: middle on your
+container.
+* Can you use flexbox? If you don’t need to support IE9, you can center your
+content with flexbox. See chapter 5.
+* Is the inner content only one line of text? Set a tall line height equal to the
+desired container height. This will force the container to grow to contain the
+line height. If the contents aren’t inline, you may have to set them to inline
+-block.
+* Do you know the height of both the container and the inner content? Center
+the contents with absolute positioning. See chapter 7. (I only recommend this
+when all approaches mentioned here fail.)
+* What if you don't know the height of the inner element? Use absolute positioning
+in conjunction with a transform. See chapter 15 for an example. (Again, I
+only recommend this if you've ruled out all other options.)
+*/
