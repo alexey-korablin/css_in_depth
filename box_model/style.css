@@ -173,3 +173,135 @@ when all approaches mentioned here fail.)
 in conjunction with a transform. See chapter 15 for an example. (Again, I
 only recommend this if you've ruled out all other options.)
 */
+
+/*
+Margin-collapse tips:
+* Применение overflow: auto (любого, кроме visible) к контейнеру предотвратит схлопывание внешнего отступа внутри контейнера и внешних отступов соседних контейнеров
+* Добавление рамок и внутренних отступов между двумя внешними отступами
+* Внешние отступане схлопнутся если контейнер имеет свойство float и display: inline-block или если у него position: absolute || fixed
+* При использовании flexbox и grid
+* display: table-cell || table-row (такие элементы не имеют внешних отступов, они и не схлопнутся) исключение: table, table-inline, table-caption
+*/
+
+.sidebar-spacing {
+    background-color: #fff;
+    padding: 1.5em;
+}
+
+.button-link {
+    display: block;
+    padding: 0.5em;
+    color: #fff;
+    background-color: #0090c9;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.button-link + .button-link {
+    margin-top: 1.5em;
+}
+
+.sponsor-link {
+    display: block;
+    color: #0072b0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* Это решение добавляет внешний отступ всем сестринским элементам после body
+Если body не указать, то он будет расценен как сестринский элемент по отношению к элементу head и получит отступ сверху*/
+/* body * + * {
+    margin-top: 1.5em;
+} 
+
+.main-spacing {
+    width: 70%;
+    padding: 1em 1.5em;
+    background-color: #fff;
+    border-radius: .5em;
+}
+
+.sidebar-spacing {
+    width: 30%;
+    margin-top: 0;
+    margin-left: 1.5em;
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: .5em;
+} */
+
+/* Final */
+
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body * + * {
+    margin-top: 1.5em;
+}
+
+.header-final {
+    padding: 1em 1.5em;
+    color: #ffffff;
+    background-color: #0072b0;
+    border-radius: .5em;
+}
+
+.container-final {
+    display: flex;
+}
+
+.main-final {
+    width: 70%;
+    padding: 1em 1.5em;
+    background-color: #ffffff;
+    border-radius: .5em;
+}
+
+.sidebar-final {
+    width: 30%;
+    padding: 1.5em;
+    margin-top: 0;
+    margin-left: 1.5em;
+    background-color: #fff;
+    border-radius: .5em;
+}
+
+.button-link-final {
+    display: block;
+    padding: 0.5em;
+    color: #ffffff;
+    background-color: #0090c9;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.sponsor-link-final {
+    display: block;
+    color: #0072b0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* 
+Summary
+    * всегда используйте универсальный фикс для border-box, чтобы сделать размеры элементов предсказуемыми
+    * избегайте явного указания высоты элементов чтобы избежать проблем с переполнением блока
+    * для того чтобы получить колонки используйте современные свойства, такие как display: table || flex || grid. Эти решения позволяют центровать элементы по высоте
+    * применяйте меры против схлопывания внешних отступов (если таковое не планируется)
+    * для применения внешних отступов у соседних элементов используйте селектор "body * + *"
+*/
