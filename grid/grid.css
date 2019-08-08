@@ -1,0 +1,22 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: .5em;
+}
+
+.grid > * {
+    background-color: darkgray;
+    color: white;
+    padding: 2em;
+    border-radius: .5em;
+}
+
+/* 
+display: grid; - ведет себя как блочный элемент, занимает 100% ширины
+display: inline-grid; - grid-layout со строчным поведением, будет занимать ширину согласно контента
+grid-template-columns - указывает количество колонок в шаблоне
+grid-template-rows - указывает количество строк в шаблоне
+fr - fraction unit - единица измерения наиболее подходящая для grid-layout, указывает какую часть свободного места будет занимать ячейка
+grid-gap - указывает промежуток между ячейками
+*/
