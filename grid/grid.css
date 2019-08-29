@@ -58,6 +58,21 @@ grid-template-areas: "top top right"
 Ключевое слово dense позволяет добиться лучшего заполнения, так как возможно изменение порядка элементов. Пример: grid-auto-flow: column dense;
 
 Проверить доступен ли display: grid; в браузере можно, выполнив feature query: @supports (display: grid) {...}
+Возможны следующие варинаты использования:
+    @supports not(<declaration>) - правила будут применены только в случае если проверяемое правило не поддерживается
+    @supports (<declaration>) or (<declaration>) - правила будут применены если хотябы одна из деклараций поддерживается
+    @supports (<declaration>) and (<declaration>) - правила будут применены только если обе декларации поддерживаются
+
+Выравнивание в сетке. Три основные свойства для распределения: justify-content, justify-items, justify-self. Эти свойства отвечают за горизонтальное расположение
+Три основные свойства для выравнивания: align-content, align-items, align-self. Эти свойства отвечают за вертикальное расположение
+Выравниваение по горизонтали и вертикали грид-контейнера относительно grid areas:
+    justify-items
+    align-items
+Выравнивание элемента сетки относительно области сетки:
+    justify-content
+    align-content
+Выравнивание грид-контейнера относительно трэков внутри контейнера
+Доступные значения для свойств: start, end, center, stretch, space-between, space-around, space-evenly
 */
 
 :root {
