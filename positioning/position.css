@@ -5,6 +5,10 @@ Fixed - позиционирует элемент строго внутри ви
     Например: top: 3em; отодвинет элемент на 3em от верхней границы ВП
     В некоторых случаях через ВП можно указать размеры элемента, например 
     left: 2em; right: 2em; означает, что элемент будет на 4em меньше ВП
+
+Absolute - работает также как и Fixed, но имеет другой containing block(КБ). 
+    Элемент с данным видом позиционирования располагается относительно ближайшего позиционированного предка. Свойства top, right, bottom, left указывают как должен располагаться данный элемент внутри своего КБ.
+    В случае если ни один из родительских элементов не позиционирован, элемент будет позиционироваться он initial containing block который равен размеру ВП и располагается наверху страницы
 */
 
 body {
@@ -57,4 +61,24 @@ button {
 
 .modal-close {
     cursor: pointer;
+    position: absolute;
+    top: 0.3em;
+    right: 0.3em;
+    padding: 0.3em;
+    cursor: pointer;
+    font-size: 2em;
+    height: 1em;
+    width: 1em;
+    text-indent: 10em;
+    overflow: hidden;
+    border: 0;
+}
+
+.modal-close::after {
+    position: absolute;
+    line-height: 0.5;
+    top: 0.2em;
+    right: 0.1em;
+    text-indent: 0;
+    content: "\00D7";
 }
