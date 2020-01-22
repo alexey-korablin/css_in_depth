@@ -1,4 +1,4 @@
-/* General styles */
+/* General styles (mobile-first) */
 :root {
     box-sizing: border-box;
     font-size: calc(1vw + 0.6em);
@@ -70,7 +70,7 @@ a:active {
 }
 
 /* Mobile */
-/* Menu styles */
+/* - Menu styles */
 .menu {
     position: relative;
 }
@@ -130,3 +130,12 @@ a:active {
     color: #ffffff;
     font-weight: normal;
 }
+
+/* Media queries */
+@media (min-width: 35em) {
+    .title > h1 {
+        font-size: 2.25rem;
+    }
+}
+
+/* 8.2 Media queries */
