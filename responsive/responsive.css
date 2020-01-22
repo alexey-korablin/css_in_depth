@@ -138,4 +138,23 @@ a:active {
     }
 }
 
-/* 8.2 Media queries */
+/* 
+Media query types.
+@media (min-width: 20em) and (max-width: 35em) {} - сработает для устройств, 
+    удовлетворяющих сразу двум критериям
+@media (min-width: 20em), (max-width: 35em) {} - сработает для устройств
+    удовлетворяющих хотя бы одному критерию
+min-width: 20em - от 20em и больше
+max-width: 35em - 35em и меньше
+media-futures: min-width, max-width, min-height, max-height, orientation:
+    landscape/portrait, min-resolution: 2dppx - определяет ретина-экраны
+    (2 точки на пиксель и больше), max-resolution: 2dppx - определяет экраны
+    с разрешением 2 точки на пиксель и меньше, и др.
+    Ограничения на использование правил, определяющих разрешение экрана:
+    IE9-11 and Opera Mini используют dpi вместо dppx. Safari and iOS Safari
+    используют правило -webkit-min-device-pixel-ratio: 2. Таким образом
+    правило для определения ретина=экрана может выглядеть так:
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {}
+media-types: screen, print. Использование print. @media print {}; @media screen {}
+*/
+/* 8.2.1 Understanding types of media query */
