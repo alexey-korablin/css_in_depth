@@ -13,6 +13,10 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+img {
+    max-width: 100%;
+}
+
 a:link {
     color: #1476b8;
     font-weight: bold;
@@ -52,13 +56,13 @@ a:active {
 .hero {
     padding: 2em 1em;
     text-align: center;
-    background-image: url(assets/coffee_beans.jpg);
+    background-image: url(assets/coffee_beans-small.jpg);
     background-size: 100%;
     color: #ffffff;
     text-shadow: 0.1em 0.1em 0.3em #000;
 }
 
-.main {
+main {
     padding: 1em;
 }
 
@@ -139,6 +143,91 @@ a:active {
 }
 
 /* 
+- medium size queries
+*/
+@media (min-width: 35em) {
+    .page-header {
+        padding: 1em;
+    }
+
+    .hero {
+        padding: 5em 3em;
+        font-size: 1.2rem;
+        background-image: url(assets/coffee_beans-medium.jpg);
+    }
+
+    main {
+        padding: 2em 1em;
+    }
+
+    /* menu queries */
+    .menu-togle {
+        display: none;
+    }
+
+    .menu-dropdown {
+        display: block;
+        position: static;
+    }
+
+    .nav-menu {
+        display: flex;
+        border: 0;
+        padding: 0 1em;
+    }
+
+    .nav-menu > li {
+        flex: 1;
+    }
+
+    .nav-menu > li + li {
+        border: 0;
+    }
+
+    .nav-menu > li > a {
+        padding: 0.3em;
+        text-align: center;
+    }
+
+    /*  main page queries */
+    .row {
+        display: flex;
+        margin-left: -0.75em;
+        margin-right: -0.75em;
+    }
+
+    .column {
+        flex: 1;
+        margin-left: 0.75em;
+        margin-right: 0.75em;
+    }
+}
+
+/* - full-size media queries */
+@media (min-width: 50em) {
+    :root {
+        font-size: 1.125em;
+    }
+
+    .page-header {
+        padding: 1em 4em;
+    }
+
+    .hero {
+        padding: 7em 6em;
+        background-image: url(assets/coffee_beans.jpg)
+    }
+
+    main {
+        padding: 2em 4em;
+    }
+
+    .nav-menu {
+        padding: 0 4em;
+    }
+}
+
+/* 
 Media query types.
 @media (min-width: 20em) and (max-width: 35em) {} - сработает для устройств, 
     удовлетворяющих сразу двум критериям
@@ -155,6 +244,12 @@ media-futures: min-width, max-width, min-height, max-height, orientation:
     используют правило -webkit-min-device-pixel-ratio: 2. Таким образом
     правило для определения ретина=экрана может выглядеть так:
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {}
-media-types: screen, print. Использование print. @media print {}; @media screen {}
+media-types: screen, print. Использование print. @media print {}; 
+    @media screen {}
+CSS позволяет загружать оптимальные изображения в зависимости от размеров 
+    экрана. Если же приходится иметь дело с HTML тегом img, то подобной 
+    гибкости позволяет добиться атрибут srcset (поддерживается современными 
+    браузерами). Использование:
+    <img alt='Alt text' src='default-image.png' srcset='small.png 560w, 
+    medium.png 800w, large.png 1280w'>
 */
-/* 8.2.1 Understanding types of media query */
