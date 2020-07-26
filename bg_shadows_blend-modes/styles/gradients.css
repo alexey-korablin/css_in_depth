@@ -1,0 +1,14 @@
+/* 
+Свойства background
+
+background-image - устанавливает в качестве фона картинку из файла или градиент
+background-position - устанавливает начальную позицию фона
+background-size - устанвливает размер фоноваого изображения в элементе
+background-repeat - определяет нужно ли повторить конец изображения для
+  заполнения всего элемента
+background-origin - определяет позиционирование элемента относительно
+  свойств элемента border-box, padding-box (initial-value) или content-box
+background-clip -
+background-attachment -
+background-color -
+*/
