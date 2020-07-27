@@ -8,7 +8,26 @@ background-repeat - определяет нужно ли повторить ко
   заполнения всего элемента
 background-origin - определяет позиционирование элемента относительно
   свойств элемента border-box, padding-box (initial-value) или content-box
-background-clip -
-background-attachment -
-background-color -
+background-clip - Указывает, должен ли фон заполнять поверхность элемента
+  в зависимости от свойства border-box, padding-box (initial-value) или 
+  content-box
+background-attachment - определяет должен ли фон скорллиться вместе с
+  экраном или же должен оставаться неподвижным (значение свойства fixed)
+background-color - указывает цвет фона. Он отрисовывается позади изображения
 */
+
+/* 
+Градиент 
+Градиент определяется свойством background-image и значением linear-gradient
+linear-gradient принимает три параметра: угол, начальный цвет и конечный цвет
+Угол также можно указать в:
+rad - радианах. Один полный круг - 2 пи или 6.2832 радиана
+turn - обороты вокруг. Один оборот равен 360 градусам. Для примера 90 градусов
+  - это 0.25turn
+grad - градианы.  Один полный круг - 400град, 90 градусов - 100град
+*/
+.fade {
+  height: 200px;
+  width: 400px;
+  background-image: linear-gradient(to right, white, blue);
+}
