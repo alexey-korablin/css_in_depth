@@ -70,3 +70,87 @@ grad - градианы.  Один полный круг - 400град, 90 гр�
     blue 60%
   );
 }
+
+/* 
+Повторяющийся линейный градиент
+Функция repeating-linear-gradient(), лучше использовать определенные величины
+чем проценты
+*/
+.fade-repeat {
+  height: 1em;
+  width: 400px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #57b,
+    #57b 10px,
+    #148 10px,
+    #148 20px
+  );
+  border-radius: 0.3em;
+}
+
+/* 
+Круговой градиент (эллипс)
+Функция radial-gradient
+*/
+.fade-radial {
+  height: 200px;
+  width: 400px;
+  background-image: radial-gradient(white, blue);
+}
+
+/* 
+Круговой градиент (круг)
+Функция radial-gradient, аргумент circle
+*/
+.fade-radial-circle {
+  height: 200px;
+  width: 400px;
+  background-image: radial-gradient(circle, white, blue);
+}
+
+/* 
+Круговой градиент (круг), позиционирован и ограничен в размере
+Функция radial-gradient, размер 25em, расположен на 25% слева и справа
+от левого верхнего угла
+ */
+.fade-radial-positioned-sized {
+  height: 200px;
+  width: 400px;
+  background-image: radial-gradient(
+    3em at 25% 25%,
+    white,
+    midnightblue
+  );
+}
+
+/* 
+Круговой градиент (круг), с явно указанной границей цвета
+Функция radial-gradient
+*/
+.fade-radial-color-stop {
+  height: 200px;
+  width: 400px;
+  background-image: radial-gradient(
+    circle,
+    midnightblue 0%,
+    white 75%,
+    red 100%
+  );
+}
+
+/* 
+Круговой повторяющийся градиент (круг)
+Функция repeating-radial-gradient
+*/
+.fade-radial-repeat {
+  height: 200px;
+  width: 400px;
+  background-image: repeating-radial-gradient(
+    circle,
+    midnightblue 0,
+    midnightblue 1em,
+    white 1em,
+    white 2em
+  );
+}
