@@ -31,3 +31,42 @@ grad - градианы.  Один полный круг - 400град, 90 гр�
   width: 400px;
   background-image: linear-gradient(to right, white, blue);
 }
+
+/* 
+Используется переход между тремя цветами. Распределение цветов - равномерное
+Направление - по горизонтали
+*/
+.fade-color-stop {
+  height: 200px;
+  width: 400px;
+  background-image: linear-gradient(90deg, red, white, blue);
+}
+
+/* 
+Распределение цветов задается процентами
+*/
+.fade-color-stop-percentage {
+  height: 200px;
+  width: 400px;
+  background-image: linear-gradient(
+    90deg,
+    red 0%,
+    white 50%,
+    blue 100%
+  );
+}
+
+/* 
+Создание полос с помощью градиента
+*/
+.fade-color-stripes {
+  height: 200px;
+  width: 400px;
+  background-image: linear-gradient(
+    90deg,
+    red 40%,
+    white 40%,
+    white 60%,
+    blue 60%
+  );
+}
