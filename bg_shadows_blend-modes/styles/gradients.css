@@ -227,3 +227,81 @@ Shadows - тени
   transform: translateY(0.1em);
   box-shadow: 0 0.3em #148;
 }
+
+/* 
+Blend - смешивание
+Для смешивания можно использовать свойство background-image: url1, url2
+В качестве параметра может быть также и градиент
+Режимы смешивания
+Затемнение
+  multiply - Чем светлее передний цвет, тем сильнее будет виден цвет основы
+  darken - выбирает наиболее темный из двух цветов
+  color-burn - затемняет цвет основы, повышая контраст
+Осветление
+  screen - Чем темнее передний цвет, тем силнее будет виден цвет основы
+  lighten - Выбирается более яркий из цветов
+  color-dodge - осветляет цвет основы, уменьшая контраст
+Контраст
+  overlay - увеличивает контраст применением multiply к темным тонам и 
+  screen к ярким, на половину
+  hard-light - сильно увеличивает контраст. Как overlay, но в полную силу
+  soft-light - работает как hard-light, но использует burn/dodge вместо
+  multiply/screen
+Составные значения
+  hue - применяет оттенок верхнего цвета к нижнему
+  saturation - применяет насыщенность верхнего цвета к нижнему
+  luminosity - применяет яркость верхнего цвета к нижнему
+  color - применяет оттенок и насыщенность верхнего цвета к нижнему
+*/
+.blend {
+  min-height: 400px;
+  min-width: 800px;
+  background-image: url(../assets/img/bear.jpg),
+    url(../assets/img/bear.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -10vw, 10vw;
+  background-blend-mode: multiply;
+}
+
+.blend-tint {
+  min-height: 400px;
+  min-width: 800px;
+  background-image: url(../assets/img/bear.jpg);
+  background-color: #148;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: luminosity;
+}
+
+.blend-texture {
+  min-height: 400px;
+  min-width: 800px;
+  background-image: url(../assets/img/stripes.png),
+    url(../assets/img/bear.jpg);
+  background-size: 40px, cover;
+  background-repeat: repeat, no-repeat;
+  background-position: center center;
+  background-blend-mode: soft-light;
+}
+.blend-mix {
+  height: 400px;
+  width: 800px;
+  background-image: url(../assets/img/bear.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 5em 0em 10em;
+}
+
+.blend-mix > h1 {
+  margin: 180px 0 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6rem;
+  text-align: center;
+  mix-blend-mode: hard-light;
+  background-color: #cc3333;
+  color: #808080;
+  border: 0.1em solid #ccc;
+  border-width: 0.1em 0;
+}
