@@ -19,9 +19,10 @@ html {
   --medium-green: #20c997;
   --text-color: #212529;
   --gray: #868e96;
-  --light-gray: #f1f315;
+  --light-gray: #f1f3f5;
   --extra-light-gray: #f8f9fa;
   --white: #ffffff;
+  --red: hsl(342, 63%, 46%);
 }
 
 *,
@@ -57,9 +58,10 @@ a:hover {
 }
 
 a:active {
-  color: red;
+  color: var(--red);
 }
 
+/* Top navigation */
 .nav-container {
   background-color: var(--medium-green);
 }
@@ -105,4 +107,76 @@ a:active {
 .top-nav__featured > a:hover {
   color: var(--medium-green);
   background-color: var(--white);
+}
+/* Hero container */
+.hero {
+  background: url(../assets/collaboration.jpg) no-repeat;
+  background-size: cover;
+  margin-bottom: 2.5rem;
+}
+
+.hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 50px 0px 200px;
+  text-align: right;
+}
+
+.hero h2 {
+  font-size: 1.95rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.4em 1em;
+  color: var(--brand-green);
+  border: 2px solid var(--brand-green);
+  border-radius: 0.2em;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.button:hover {
+  background-color: var(--dark-green);
+  color: var(--white);
+}
+
+.button--cta {
+  padding: 0.6em 1em;
+  background-color: var(--brand-green);
+  color: var(--white);
+  border: none;
+}
+/* Main block */
+.container {
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+.tile-row {
+  display: flex;
+}
+
+.tile-row > * {
+  flex: 1;
+}
+
+.tile {
+  background-color: var(--white);
+  border-radius: 0.3em;
+}
+
+/* Footer of the page */
+.page-footer {
+  margin-top: 3em;
+  padding: 1em 0;
+  background-color: var(--light-gray);
+  color: var(--gray);
+}
+
+.page-footer__inner {
+  margin: 0 auto;
+  max-width: 1080px;
+  text-align: center;
+  font-size: 0.8rem;
 }
