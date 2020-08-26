@@ -13,6 +13,32 @@ Colors
 #f8f9fa - extra-light gray
 */
 
+/* 
+При определении @font-face можно указать как вести себя шрифтам во время 
+загрузки страницы. За это поведение отвечает свойство font-display. Доступные 
+значенения: auto, swap, fallback, optional
+auto - поведение по умолчанию
+swap - показывает запасной шрифт, затем заменяет его когда шрифт будет 
+  загружен из сети
+fallback - в течение 100мсек шрифт будет невидим. Если веб шрифт еще не 
+  загружен, то до момента его загрузки будет показан запасной шрифт
+  который впоследствии будет заменен на веб-шрифт
+optional - похоже на fallback, но браузер может решить переключаться ли на 
+  веб-шрифт или нет в зависимости от скорости сети
+
+На быстрых соединениях лучше работает fallback, для медленных лучше подходит 
+swap. Если же дизайн - не главная часть сайта, то хорошо подойдет optional
+*/
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'),
+    url(https://example.com/roboto.woff2) format('woff2'),
+    url(https://example.com/roboto.woff2) format('woff');
+  font-display: swap;
+}
+
 html {
   --brand-green: #076448;
   --dark-green: #099268;
@@ -66,6 +92,22 @@ a:active {
 p {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
+}
+
+/* Fonts failed styles */
+.fonts-failed body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.fonts-failed h1,
+.fonts-failed h2,
+.fonts-failed h3,
+.fonts-failed h4 {
+  font-family: Georgia, serif;
+}
+
+.fonts-failed .home-link {
+  font-family: Georgia, serif;
 }
 
 /* Top navigation */
