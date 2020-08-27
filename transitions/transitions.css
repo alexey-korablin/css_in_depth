@@ -1,0 +1,31 @@
+button {
+  background-color: hsl(180, 50%, 50%);
+  border: 0;
+  color: white;
+  font-size: 1rem;
+  padding: 0.3em 1em;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+/* 
+transition-property: all - указывает на то что для изменения всех свойств на 
+кнопке будет применен переход в течение 500мсек (transition-duration: 0.5s)
+transition-property может принимать несколько значений через запятую: 
+  color, font-size
+Существует также сокращение для свойства transition:
+  transition: background-color 0.3s linear 0.5s
+  transition: <свойство> <длительность> <временнАя функция> <задержка>
+  <длительность> не может равняться 0
+Также в transition может быть указано несколько наборов параметров для разных
+  свойств. Указываются они через запятую.
+  transition: <свойство 1> <длительность 1> <временнАя функция 1>,
+              <свойство 2> <длительность 2> <временнАя функция 2>
+Можно указывать отдельные свойства:
+  transition-property: background-color, border-radius;
+  transition-duration: 0.5s, 0.3s;
+  transition-timing-function: linear, ease
+ */
+button:hover {
+  background-color: hsl(0, 50%, 50%);
+  border-radius: 1em;
+}
