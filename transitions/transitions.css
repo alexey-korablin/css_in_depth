@@ -29,3 +29,38 @@ button:hover {
   background-color: hsl(0, 50%, 50%);
   border-radius: 1em;
 }
+
+.container {
+  position: relative;
+  height: 184px;
+}
+.box {
+  position: absolute;
+  left: 0;
+  height: 30px;
+  width: 60px;
+  background-color: hsl(130, 50%, 50%);
+}
+.box.v1 {
+  transition: all 1s linear;
+  top: 0;
+}
+.box.v2 {
+  transition: all 1s ease-in;
+  top: 46px;
+}
+.box.v3 {
+  transition: all 1s ease-out;
+  top: 92px;
+}
+.box.v4 {
+  transition: all 1s steps(3, end);
+  top: 138px;
+}
+.container:hover .box {
+  left: 400px;
+}
+/* 
+Визуализация timing-functions: https://cubic-bezier.com/
+Также можно посмотреть временнЫе функции в DevTools Chrome
+*/
