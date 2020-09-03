@@ -119,3 +119,17 @@ body {
   background-color: hsl(280, 15%, 80%);
   color: hsl(280, 25%, 10%);
 }
+
+.dropdown__drawer {
+  position: absolute;
+  background-color: white;
+  width: 10em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s linear visibility 0s linear 0.2s;
+}
+.dropdown.is-open .dropdown__drawer {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
