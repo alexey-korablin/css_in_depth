@@ -124,12 +124,15 @@ body {
   position: absolute;
   background-color: white;
   width: 10em;
-  opacity: 0;
-  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  /* opacity: 0; */
+  /* visibility: hidden; */
   transition: opacity 0.2s linear visibility 0s linear 0.2s;
 }
 .dropdown.is-open .dropdown__drawer {
-  opacity: 1;
+  /* opacity: 1;
   visibility: visible;
-  transition-delay: 0s;
+  transition-delay: 0s; */
+  height: auto;
 }

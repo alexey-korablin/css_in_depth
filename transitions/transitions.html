@@ -32,10 +32,20 @@
     <script type="text/javascript">
       {
         const toggle = document.querySelector('.dropdown__toggle');
+        const drawer = document.querySelector('.dropdown__drawer');
         const dropdown = toggle.parentElement;
+        const height = drawer.scrollHeight;
         toggle.addEventListener('click', (event) => {
           event.preventDefault();
           dropdown.classList.toggle('is-open');
+          if (dropdown.classList.contains('is-open')) {
+            drawer.style.setProperty(
+              'height',
+              `${drawer.scrollHeight}px`,
+            );
+          } else {
+            drawer.style.setProperty('height', 0);
+          }
         });
       }
     </script>
