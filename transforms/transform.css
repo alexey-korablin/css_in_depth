@@ -7,6 +7,7 @@ img {
   max-width: 100%;
 }
 
+/* Выполнится только последнее правило transform */
 .card {
   padding: 0.5em;
   margin: 0 auto;
@@ -21,3 +22,13 @@ img {
 /* Возможно поменять точку начала трансформации
 Устанавливается свойством transform-origin и может принимать значения: right, left, center, top, bottom
 Может быть также указан в пикселях или иных единицах измерения */
+
+/* Правила transform выполнятся по порядку, но сначала выполнится правило
+transform, а потом - rotate */
+.card-1 {
+  padding: 0.5em;
+  margin: 0 auto;
+  background-color: white;
+  max-width: 300px;
+  transform: rotate(15deg) translate(20px, 0);
+}
