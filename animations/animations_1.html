@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="animations_1.css">
+  <title>Animation on form</title>
+</head>
+<body>
+  <form>
+    <label for="trip">Tell us about your first trip to the zoo:</label>
+    <textarea name="about-my-trip" id="trip" cols="30" rows="10" tows="5"></textarea>
+    <button id="submit-button" type="submit">Save</button>
+  </form>
+
+  <script type="text/javascript">
+    const input = document.getElementById('trip');
+    const button = document.getElementById('submit-button');
+    let timeout = 0;
+
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      clearTimeout(timeout);
+      button.classList.add('is-loading');
+      button.disabled = true;
+      input.disabled = true;
+    })
+
+    input.addEventListener('keyup', () => {
+      clearTimeout(timeout)
+      timeout = setTimeout(() => {
+        button.classList.add('shake');
+      }, 1000)
+    })
+
+    input.addEventListener('animationed', () => {
+      button.classList.remove('shake')
+    })
+  </script>
+</body>
+</html>
