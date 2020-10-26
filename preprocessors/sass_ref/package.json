@@ -1,0 +1,16 @@
+{
+  "name": "sass_ref",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass sass/index.scss build/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-gyp": "^7.1.2",
+    "node-sass": "^4.14.1"
+  }
+}

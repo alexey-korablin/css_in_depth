@@ -1,0 +1,43 @@
+$brand-blue: #0086b3;
+
+$left-padding: 3em;
+
+a:link {
+  color: $brand-blue;
+}
+
+.page-heading {
+  font-size: 1.6rem;
+  color: $brand-blue;
+}
+
+.note-author {
+  padding-left: $left-padding;
+  font-weight: bold;
+}
+
+// Для вычислений значений доступны операторы + - * /
+.note-body {
+  padding-left: $left-padding * 2;
+}
+
+// вложенные селекторы
+html {
+  font-size: 1rem;
+
+  @media (min-width: 45rem) {
+    font-size: 1.25rem;
+  }
+}
+
+.site-nav {
+  display: flex;
+
+  > li {
+    margin-top: 0;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}
