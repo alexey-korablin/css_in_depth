@@ -77,3 +77,31 @@ html {
 .alert-danger {
   @include alert-variant(red, pink);
 }
+
+// Extend. В отличии от mixine не копирует правила, а группирует селекторы
+// вместе, при использовании одинакового набора правил
+
+.message {
+  padding: 0.3em 0.5em;
+  border-radius: 0.5em;
+}
+
+.message-info {
+  @extend .message;
+  color: blue;
+  background-color: lightblue;
+}
+
+.message-danger {
+  @extend .message;
+  color: red;
+  background-color: pink;
+}
+
+// Управление цветом
+// Функции: darken, lighten, saturate, desaturate, adjust-hue, rgba
+// darken, lighten, saturate, desaturate - принимают два входных значения
+//  цвет и значение на которое нужно произвести изменение в процентах
+// adjust-hue - в качестве первого параметра принимает значение цвета,
+//  второй параметр - угол поворота на цветовом диске
+// rgba - принимает два значения: 1-е цвет, 2-е прозрачность (от 0 до 1)
