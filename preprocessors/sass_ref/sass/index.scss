@@ -105,3 +105,24 @@ html {
 // adjust-hue - в качестве первого параметра принимает значение цвета,
 //  второй параметр - угол поворота на цветовом диске
 // rgba - принимает два значения: 1-е цвет, 2-е прозрачность (от 0 до 1)
+$green: #63a35c;
+
+$green-dark: darken($green, 10%);
+$green-light: lighten($green, 10%);
+
+$green-vivid: saturate($green, 20%);
+$green-dull: desaturate($green, 20%);
+
+$purple: adjust-hue($green, 180deg);
+$yellow: adjust-hue($green, -70deg);
+
+$green-transparent: rgba($green, 0.5);
+
+// Циклы
+// В примере ниже в цикле будут перебраны все дочерние li (со 2-го по 4-й)
+// элементы элемента с классом .nav-links
+@for $index from 2 to 5 {
+  .nav-links > li:nth-child(#{index}) {
+    transition-delay: (0.1s * $index) - 0.1s;
+  }
+}
